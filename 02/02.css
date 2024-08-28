@@ -10,3 +10,24 @@ footer {
   background-color: black;
   color: white;
 }
+
+#menu > li{
+  background-color: rgb(149, 149, 245);
+  color: white;
+}
+
+#menu > a {
+  color: white;
+}
+
+section {
+  background-color: white;
+}
+
+.s1 {
+  background-color: aquamarine;
+}
+
+.s2 {
+  background-color: aqua;
+}
