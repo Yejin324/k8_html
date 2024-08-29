@@ -1,9 +1,11 @@
 *{
-  background-color: rgb(61, 61, 61);
   padding: 0px;
   margin: 0px;
 }
 
+body {
+  background-color: rgb(61, 61, 61);
+}
 body h1{
   display: flex;
   margin-top: 20%;
@@ -17,27 +19,26 @@ body ul{
   margin-bottom: 10px;
 }
 
-body li{
+.Lii{
   background-color: antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
   height: 45px;
+  border-radius: 10px;
 }
 
 .space{
   display: flex;
-  /* flex : 박스 내의 항목을 수직, 수평으로 배치가능하도록 함 */
-  flex-direction: row;
-  justify-content: space-between;
-  /* justify-content: 수평 정렬
-     space-between: 자동 정렬되어 간격 지정됨 */
+
+  flex-direction: column;
+  justify-content: center;
   height: 40%;
   align-items: center;
 }
 
 a{
-  text-decoration: none;
+  text-decoration: none; 
   color: black;
 }
