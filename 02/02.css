@@ -1,9 +1,24 @@
-header{
-  background-color: aliceblue;
+*{
+  padding: 0px;
+  margin: 0px;
+
+  box-sizing: border-box;
+  /* box-sizing: border-box: padding이 박스 내에서 생성됨, width 고정 */
+}
+/* padding: 박스 내의 공백, margin: 박스 외의 공백
+'*'은 모든 것을 선택하는 셀렉터 */
+
+header, main, footer{
+  width: 80%;
+  margin-left: 10%;
+}
+
+header, main{
+  background-color: rgb(211, 252, 238);
 }
 
 main{
-  background-color: rgb(200, 251, 234);
+  padding-bottom: 10px;
 }
 
 footer {
@@ -11,23 +26,168 @@ footer {
   color: white;
 }
 
-#menu > li{
-  background-color: rgb(149, 149, 245);
+header, header ul{
+  /* 1. header ul 이면 header 아래 모든 ul 선택됨(부등호 사용x, 공백으로 둠)
+     2. header > nav > ul은 지정 */
+
+  display: flex;
+  /* flex : 박스 내의 항목을 수직, 수평으로 배치가능하도록 함 */
+  flex-direction: row;
+  justify-content: space-between;
+  /* justify-content: 수평 정렬
+     space-between: 자동 정렬되어 간격 지정됨 */
+  height: 80px;
+  align-items: center;
+  /* align-items: center: 박스 내 수직 중앙 정렬 */
+}
+
+header{
+  padding: 20px;
+  box-sizing: border-box;
+  
+}
+
+ul{
+  list-style: none;
+  /* ul 목록의 검은 점 삭제 */
+}
+
+.menuLi{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 7px;
+  height: 45px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color:indianred;
+  border-radius: 15%;
+  /* border-radius: 모서리 */
+}
+
+.menuLi:hover {
+  /* menuLi에 마우스가 올라간 경우 */
+  background-color: darkorange;
+  border: 3px dotted blueviolet;
+}
+
+a{
+  /* a태그의 속성? */
+
+  text-decoration: none;
+  /* text-decoration: none: li 밑줄 삭제 */
   color: white;
 }
 
-#menu > a {
-  color: white;
+a > img {
+  width: 20px;
+  height: 20px;
 }
 
-section {
+article{
+  padding: 60px;
+}
+
+h1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+}
+
+p span{
+  display: inline-flex;
+  flex-direction: row;
+
+  font-weight: bold;
+}
+
+section{
+  margin: 20px;
+  padding: 20px 40px;
+  /* padding: 위,아래px 왼, 오px
+     padding: 위, 오, 아, 왼 */
+
   background-color: white;
+  border-radius: 20px;
 }
 
-.s1 {
-  background-color: aquamarine;
+.secDiv{
+  display: flex;
+  flex-direction: row;
 }
 
-.s2 {
-  background-color: aqua;
+.secDiv > div{
+  width: 20%;
+}
+
+.secDiv img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.secDiv p {
+  display: flex;
+  padding-left: 20px;
+  width: 80%;
+  font-size: medium;
+  color: grey;
+  align-items: center;
+}
+
+h2{
+  padding-bottom: 20px;
+}
+
+footer{
+
+  padding:20px;
+
+}
+
+#fLi1{
+  font-size: larger;
+  font-weight: bold;
+}
+
+#fLi2{
+  margin-bottom: 10px;
+}
+
+#fLi3{
+  display: flex;
+  font-size: smaller;
+  justify-content: right;
+}
+
+@media screen and (max-width : 1024px) {
+  header, main, footer{
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  header, header ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+  }
+
+  header{
+    padding: 20px;
+    width: 100%;
+  }
+
+  header li{
+    width: 90%;
+    margin-bottom: 5px;
+  }
 }
