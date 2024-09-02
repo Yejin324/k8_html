@@ -26,11 +26,14 @@ body ul{
   align-items: center;
   margin: 10px;
   height: 45px;
+  width: 200px;
   border-radius: 10px;
 }
 
 .Lii:hover{
   background-color:dimgrey;
+  color: antiquewhite;
+  font-weight: bolder;
 }
 
 .space{

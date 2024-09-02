@@ -24,3 +24,12 @@ header img {
   width: 40px;
   height: 40px;
 }
+
+main {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 500px;
+  border: 1px dotted darkcyan;
+}
