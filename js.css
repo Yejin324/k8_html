@@ -12,7 +12,8 @@ header, main {
 
 header {
   height: 80px;
-  background-color:lightslategrey;
+  /* background-color:palevioletred; */
+  background-color:cornflowerblue;
   color: aliceblue;
 
   justify-content: space-between;
@@ -23,6 +24,12 @@ header {
 header img {
   width: 40px;
   height: 40px;
+  padding: 5px;
+}
+
+header div {
+  background-color:white;
+  border-radius: 50%;
 }
 
 main {
@@ -31,5 +38,22 @@ main {
   align-items: center;
 
   height: 500px;
-  border: 1px dotted darkcyan;
+  border: 1px dotted black;
+}
+
+button{
+  padding: 10px;
+  border-radius: 5px;
+  background-color:cornflowerblue;
+  color: white;
+  border: none;
+}
+
+button:hover{
+  background-color:lightskyblue;
+  font-weight: bolder;
+}
+
+section{
+  margin: 5px;
 }

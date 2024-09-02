@@ -34,6 +34,7 @@ body ul{
   background-color:dimgrey;
   color: antiquewhite;
   font-weight: bolder;
+  border: 1px blue;
 }
 
 .space{
