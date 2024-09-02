@@ -29,6 +29,10 @@ body ul{
   border-radius: 10px;
 }
 
+.Lii:hover{
+  background-color:dimgrey;
+}
+
 .space{
   display: flex;
 
