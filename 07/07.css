@@ -5,8 +5,9 @@
   height: 40px;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
+  margin-left: 5%;
 }
 
 .sec, .row{
@@ -16,8 +17,8 @@
 .row{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 
   margin-bottom: 20px;
 }
@@ -30,5 +31,4 @@ select {
 input {
   width: 80%;
   height: 100%;
-  margin-left: 5%;
 }
