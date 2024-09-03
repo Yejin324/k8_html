@@ -6,9 +6,10 @@
 body {
   background-color: rgb(61, 61, 61);
 }
+
 body h1{
   display: flex;
-  margin-top: 20%;
+  margin-top: 10%;
   justify-content: center;
   color: white;
 }
@@ -31,7 +32,7 @@ body ul{
 }
 
 .Lii:hover{
-  background-color:dimgrey;
+  background-color:rgb(255, 53, 161);
   color: antiquewhite;
   font-weight: bolder;
   border: 1px blue;

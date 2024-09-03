@@ -1,65 +1,36 @@
-const ClickTest = () => {
-  alert(`${n}`);
-}
-
 document.addEventListener('DOMContentLoaded', ()=>{
-  const btn1 = document.querySelector('#btn1');
-  const btn2 = document.querySelector('#btn2');
-  const btn3 = document.querySelector('#btn3');
-  const btn4 = document.querySelector('#btn4');
-  const btn5 = document.querySelector('#btn5');
-  const btn6 = document.querySelector('#btn6');
 
-  const img = document.querySelector('#msg > img');
-  const img2 = document.querySelector('#user > img');
+  const btn = document.querySelectorAll('.clickbtn > button');
+  const img = document.querySelectorAll('.image img');
+  const result = document.querySelector('#result > a');
+  // const imgCOM = document.querySelector('#com img');
+  // const imgUSER = document.querySelector('#user img');
 
-  const result = document.querySelector('#result');
-    
-  btn1.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
-    let m = btn1.innerHTML;
-    
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/${m}.png`);
+  
+  console.log(img);
 
-    if (n === m) result.innerHTML = '맞음';
-    else result.innerHTML = '틀림';
-  })
-  btn2.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
-    let m = btn2.innerHTML;
+  for (let bt of btn){
+    bt.addEventListener('click', ()=>{
+      let comN = Math.floor(Math.random() * 6) + 1;
+      let userN = parseInt(bt.textContent.charAt(0));
+      //bt.textContent : bt의 문자열 추출 / charAt(0) : 0번째 문자열 추출 / parseInt : 데이터 타입 'char' type을 Int 로 변환
 
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/${m}.png`);
-  })
-  btn3.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
+      img[0].setAttribute('src', `../img/${comN}.png`); 
+      img[0].setAttribute('alt', `${comN}`);
 
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/3.png`);
-  })
-  btn4.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
+      img[1].setAttribute('src', `../img/${userN}.png`);
+      img[1].setAttribute('alt', `${userN}`);
 
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/4.png`);
-  })
-  btn5.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
+      // imgCOM.setAttribute('src', `../img/${comN}.png`); 
+      // imgCOM.setAttribute('alt', `${comN}`);
+      // imgUSER.setAttribute('src', `../img/${userN}.png`);
 
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/5.png`);
-  })
-  btn6.addEventListener('click', ()=>{
-    let n = Math.floor(Math.random() * 6) + 1;
-
-    img.setAttribute('src', `../img/${n}.png`); //setter 값을 바꿀 수 있다. getter(getAttribute) 값을 가져올 수 있다
-    img.setAttribute('alt', `${n}`);
-    img2.setAttribute('src', `../img/6.png`);
-  })
+      if(userN === comN){
+        result.innerHTML = '맞음';
+      }
+      else {
+        result.innerHTML = '틀림';
+      }
+    });
+  }
 });
