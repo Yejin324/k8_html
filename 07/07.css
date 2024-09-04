@@ -7,7 +7,7 @@
   display: flex;
   justify-content: left;
   align-items: left;
-  margin-left: 5%;
+  margin-left: 7%;
 }
 
 .sec, .row{
@@ -17,8 +17,8 @@
 .row{
   display: flex;
   flex-direction: row;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
 
   margin-bottom: 20px;
 }
@@ -31,4 +31,19 @@ select {
 input {
   width: 80%;
   height: 100%;
+}
+
+label {
+  height: 100%;
+  padding-left: 3px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+}
+
+#txt2{
+  background-color:rgb(236, 243, 249);
 }

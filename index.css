@@ -4,14 +4,14 @@
 }
 
 body {
-  background-color: rgb(61, 61, 61);
+  background-color:rgb(255, 231, 235);
 }
 
 body h1{
   display: flex;
   margin-top: 10%;
   justify-content: center;
-  color: white;
+  color:rgb(57, 56, 56);
 }
 
 body ul{
@@ -21,18 +21,18 @@ body ul{
 }
 
 .Lii{
-  background-color: antiquewhite;
+  background-color:lightslategray;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
   height: 45px;
-  width: 200px;
+  width: 250px;
   border-radius: 10px;
 }
 
 .Lii:hover{
-  background-color:rgb(255, 53, 161);
+  background-color:rgb(250, 98, 179);
   color: antiquewhite;
   font-weight: bolder;
   border: 1px blue;
@@ -50,4 +50,16 @@ body ul{
 a{
   text-decoration: none; 
   color: black;
+}
+
+#title h1{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 3px double black;
+  background-color: lightpink;
+}
+
+#title{
+  margin-left: 35%;
+  margin-right: 35%;
 }
