@@ -40,6 +40,10 @@
   width: 20%;
 }
 
+.sect button:hover{
+  background-color: coral;
+}
+
 .sect input{
   width: 35%;
   height: 40px;
@@ -48,4 +52,5 @@
 
 #txt2 {
   background-color:aliceblue;
+  text-align: center;
 }

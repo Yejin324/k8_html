@@ -10,7 +10,7 @@ console.log('첫번째글자 : ', s.charAt(0));
 console.log('마지막글자 : ', s[s.length - 1]);
 console.log('마지막글자 : ', s.charAt(s.length - 1));
 console.log('마지막글자 : ', s.slice(-1));
-console.log('문자열 분리 : ', s.split(''));
+console.log('문자열 분리 : ', s.split('')); //배열
 
 //문자열 순회
 for(let c of s) {
