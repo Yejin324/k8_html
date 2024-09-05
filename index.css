@@ -63,3 +63,10 @@ a{
   margin-left: 35%;
   margin-right: 35%;
 }
+
+@media screen and (max-width : 1024px) {
+  #title h1{
+    width: 100%;
+    margin-left: 0px;
+  }
+}
