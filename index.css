@@ -5,8 +5,8 @@
 
 body {
   background-repeat: no-repeat;
-  background-size:100%;
-  background-repeat: repeat-y;
+  background-size:auto 1080px;
+  background-repeat: no-repeat;
 }
 
 body h1{
@@ -23,22 +23,24 @@ body ul{
 }
 
 .Lii{
-  background-color:lightslategray;
+  background-color:beige;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  height: 30px;
+  height: 50px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 24px;
   font-size: small;
+  border: 2px solid rgb(46, 46, 46);
 }
 
 .Lii:hover{
-  background-color:rgb(250, 98, 179);
+  background-color: rgb(253, 197, 206);
   color: antiquewhite;
   font-weight: bolder;
   border: 1px blue;
+  border: 2px solid rgb(46, 46, 46);
 }
 
 .space{
@@ -56,10 +58,13 @@ a{
 }
 
 #title h1{
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-bottom: 5px solid whitesmoke;
-  background-color: rgb(253, 197, 206);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  border: 3px solid rgb(83, 83, 83);
+  background-color: rgba(255, 216, 222, 0.829);
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 #title{
@@ -67,12 +72,12 @@ a{
   margin-right: 35%;
 }
 
-@media screen and (max-width : 1300px) {
+@media screen and (max-width : 1400px) {
   #title h1{
     width: 100%;
     /* margin-left: 0%;
     margin-right: 0%; */
-    font-size: medium;
+    font-size: larger;
     /* min-width: 400px; */
   }
   #title {
