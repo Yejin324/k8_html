@@ -1,0 +1,53 @@
+.sect{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#sectbody{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#sectbody div{
+  width: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input{
+  width: 100%;
+  height: 30px;
+  margin: 10px;
+}
+
+.sec button{
+  width: 20%;
+  height: 30px;
+  margin: 3px;
+
+  border-radius: 5px;
+  border: 0px;
+
+  background-color: cornflowerblue;
+  color: whitesmoke;
+}
+
+.sectbtn1:hover{
+  background-color:coral;
+  color: whitesmoke;
+}
+
+.sectbtn2:hover{
+  background-color:dimgray;
+  color: whitesmoke;
+}
+
+.sectbtn3:hover{
+  background-color:gold;
+  color: black;
+}

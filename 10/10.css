@@ -1,10 +1,4 @@
-.sect {
-  border: 1px dotted black;
-  width: 90%;
-  
-  padding: 15px;
-  margin: 5px; 
-}
+
 
 .div1{
   background-color: rgb(95, 134, 160);
@@ -72,10 +66,6 @@ span{
   align-items: center;
 }
 
-#title{
-  background-color:aliceblue;
-}
-
 .sect button{
   padding: 10px;
   border-radius: 5px;
@@ -85,9 +75,4 @@ span{
   border: none;
   margin: 10px;
   width: 30%;
-}
-
-#sectbody{
-  height: 70%;
-
 }
