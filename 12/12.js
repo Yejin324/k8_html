@@ -1,21 +1,62 @@
-const getData = (ul) => {
-  console.log('getData');
-  let url = 'https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=82ca741a2844c5c180a208137bb92bd7&targetDt=20240908'
+//OPEN API 데이터 가져오기
+const getData = (setDt, ul)=>{
+  console.log(setDt);
+  const testAPI = '82ca741a2844c5c180a208137bb92bd7';
+  let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
+  url = `${url}key=${testAPI}&targetDt=${setDt}`;
 
+  console.log(url);
   fetch(url)
     .then(resp => resp.json())
     .then(data => {
       console.log(data.boxOfficeResult.dailyBoxOfficeList)
       let dailyBoxOfficeList = data.boxOfficeResult.dailyBoxOfficeList;
 
-      let tm = dailyBoxOfficeList.map(item => `<li>${item.movieNm}</li>`) //item은 Object
-      console.log(tm);
-      ul.innerHTML = tm.join('');
+      let tm = dailyBoxOfficeList.map(item => 
+        `<li class="mvli">
+          <span class="rank">${item.rank}</span>
+          <span class="movieNm">${item.movieNm}</span>
+        </li>`) 
+      ul.innerHTML = tm.join(''); 
     })
     .catch(err => console.error(err));
 }
 
+//어제 날짜 구하기 함수
+const getYesterday= () => {
+  const yesterday = new Date(); 
+  //const는 상수라 값을 바꿀 수 없지만 setter에 의해 변경이 가능해짐
+  yesterday.setDate(yesterday.getDate()-1);
+  const year = yesterday.getFullYear();
+  let month = yesterday.getMonth()+1;
+  let day = yesterday.getDate();
+
+  month = month >= 10 ? month : "0" + month;
+  day = day >= 10 ? day : "0" + day;
+
+  // month = 10;
+  // month = `0${month}`.slice(-2); //끝에서 두 자리만 입력 // 010->10
+  // month = `${month}`.padStart(2,0); //2자리를 만들되 2자리가 되지 않는다면 0으로 채워라
+  // console.log(month); //slice, padStart는 문자열 함수이므로 백틱 사용해줘야함.
+
+  const maxDate = `${year}-${month}-${day}`
+  return maxDate;
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
+  const dt = document.querySelector('#dt');
   const ul = document.querySelector('.sect > ul');
-  getData(ul);
+  const openDt = document.querySelector('#openDt');
+
+  let yesterday = getYesterday();
+  // console.log(yesterday);  // console.log(getYesterday()); 위의 결과와 같음
+  
+  //date 요소의 최댓값 설정 // .max는 method
+  dt.max = yesterday;
+
+  dt.addEventListener('change', (e)=>{
+   e.preventDefault();
+    getData(dt.value.replaceAll('-',''), ul);
+    openDt.innerHTML = dt.value;
+  });
 });
