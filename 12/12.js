@@ -1,10 +1,13 @@
 //OPEN API 데이터 가져오기
-const getData = (setDt, ul)=>{
-  console.log(setDt);
+const getData = (setDt, ul, rdo1V)=>{
+  console.log(rdo1V);
   const testAPI = '82ca741a2844c5c180a208137bb92bd7';
   let url = `https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?`;
   url = `${url}key=${testAPI}&targetDt=${setDt}`;
 
+  if(rdo1V != 'T'){
+    url = `${url}&repNationCd=${rdo1V}`;
+  }
   console.log(url);
   fetch(url)
     .then(resp => resp.json())
@@ -16,6 +19,10 @@ const getData = (setDt, ul)=>{
         `<li class="mvli">
           <span class="rank">${item.rank}</span>
           <span class="movieNm">${item.movieNm}</span>
+          <span class="openDt">${item.openDt}</span>
+          <span class="rankInten" id="${item.rankInten == 0 ? "black" : (item.rankInten > 0 ? "blue" : "red")}">
+          ${item.rankInten == 0 ? "-  " : (item.rankInten > 0 ? "▲" : "▼")} 
+          ${item.rankInten != 0 ? Math.abs(item.rankInten) : ''}</span>
         </li>`) 
       ul.innerHTML = tm.join(''); 
     })
@@ -43,20 +50,53 @@ const getYesterday= () => {
   return maxDate;
 }
 
+const getRdo = () => {
+  //radio 요소 가져오기
+  const rdoT = document.querySelector('#rdoT');
+  const rdoK = document.querySelector('#rdoK');
+  const rdoF = document.querySelector('#rdoF');
+
+  console.log(rdoT.checked);
+  console.log(rdoK.checked);
+  console.log(rdoF.checked);
+
+  if(rdoT.checked) return rdoT.value;
+  else if (rdoK.checked) return rdoK.value;
+  else return rdoF.value;
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
   const dt = document.querySelector('#dt');
-  const ul = document.querySelector('.sect > ul');
-  const openDt = document.querySelector('#openDt');
+  const ul = document.querySelector('.sect ul');
+  // const sel1 = document.querySelector('#selmovie');
+  const radios = document.querySelectorAll('input[type=radio]');
+  
 
   let yesterday = getYesterday();
   // console.log(yesterday);  // console.log(getYesterday()); 위의 결과와 같음
   
   //date 요소의 최댓값 설정 // .max는 method
   dt.max = yesterday;
+  
+  //date 기본 값
+  dt.value = yesterday;
+
+  //기본 첫 페이지
+  getData(dt.value.replaceAll('-',''), ul, getRdo());
 
   dt.addEventListener('change', (e)=>{
    e.preventDefault();
-    getData(dt.value.replaceAll('-',''), ul);
-    openDt.innerHTML = dt.value;
+    getData(dt.value.replaceAll('-',''), ul, getRdo());
   });
+
+  // fieldset.addEventListener('click', (e)=>{
+  //   e.preventDefault();
+  //    getData(dt.value.replaceAll('-',''), ul, getRdo());
+  //  });
+
+  for (let radio of radios){
+    radio.addEventListener('click', ()=>{
+      if(radio.checked) getData(dt.value.replaceAll('-',''), ul, radio.value);
+    })
+  }
 });

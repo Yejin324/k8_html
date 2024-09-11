@@ -1,23 +1,40 @@
 
 header{
-  background-color:dimgrey;
-  color: whitesmoke;
+  background-color:rgb(187, 229, 255);
+  color:rgb(55, 55, 55);
 }
 
 #sectbody{
   display: flex;
   height: 80%;
-  flex-direction: row;
-  justify-content: center;
+  width: 90%;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 15px;
   padding: 5px;
 }
 
+#show{
+  display: flex;
+
+  width: 70%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-top: 5px;
+
+  border-bottom: 2px solid black;
+  font-size: smaller;
+  font-weight: bold;
+}
+
 #title{
   margin-top: 15px;
-  background-color: gray;
-  border: 1px dotted white;
+  background-color:rgb(226, 242, 252);
+  border: 1px dotted black;
   padding: 5px;
 
   /* input box 중앙정렬 */
@@ -34,40 +51,26 @@ header{
   align-items: center;
 }
 
-#openDt{
-  width: 50%;
-  padding-left: 10px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-
-  color: whitesmoke;
-  font-size: large;
-  font-weight: bold;
-}
 
 .divDt{
-  width: 50%; /*상위의 title과 크기 같게 setting*/
+  width: 90%; /*상위의 title과 크기 같게 setting*/
   height: 60px;
 
   display: flex;
-  justify-content: end;
+  justify-content: start;
   align-items: center;
-
-  padding-right: 50px;
 }
 
 input[type=date]{
-  width: 70%;
+  width: 40%;
   height: 30px;
 }
 
 ul{
   list-style: none;
-  width: 50%;
+  width: 70%;
   font-size: smaller;
+  margin-top:5px;
 }
 
 .mvli:hover{
@@ -81,11 +84,10 @@ ul{
 .mvli{
   width: 100%;
   height: 40px;
-  padding: 3px;
-  margin: 5px;
+  padding-left: 5px;
   /* border-style: double; */
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid rgb(189, 189, 189);
   
   display: flex;
   justify-content: start;
@@ -109,4 +111,90 @@ ul{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.movieNm{
+  width: 60%;
+}
+
+.openDt{
+  width: 20%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rankInten{
+  width: 10%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#selmovie{
+  width: 90%;
+  height: 30px;
+  margin-left: 20px;
+}
+
+fieldset{
+  width: 60%;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+  font-size: smaller;
+
+  padding: 10px;
+}
+
+fieldset label{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+/* #selMVdiv{
+  width: 40%;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+
+  font-size: smaller;
+
+  padding: 10px;
+}
+
+#selMVdiv label{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+} */
+
+@media screen and (max-width : 1024px) {
+  ul{
+    width: 90%;
+  }
+  #show{
+    width: 90%;
+  }
+}
+
+#blue{
+  color: blue;
+}
+
+#red{
+  color:crimson;
+}
+
+#movieNm, #openDt{
+  display: flex;
+  justify-content: center;
 }
