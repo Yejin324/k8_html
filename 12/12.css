@@ -51,6 +51,14 @@ header{
   align-items: center;
 }
 
+#mvfooter{
+  height: 200px;
+  background-color: rgb(162, 199, 234);
+  width: 60%;
+  margin-left: 20%;
+  padding-left: 12%;
+  padding-top: 5px;
+}
 
 .divDt{
   width: 90%; /*상위의 title과 크기 같게 setting*/
@@ -184,6 +192,10 @@ fieldset label{
   #show{
     width: 90%;
   }
+  #mvfooter{
+    width: 100%;
+    margin-left: 0%;
+  }
 }
 
 #blue{
@@ -197,4 +209,54 @@ fieldset label{
 #movieNm, #openDt{
   display: flex;
   justify-content: center;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#mvinfo{
+  font-size: 90%;
+}
+
+#movieNm{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+#mvinfoName{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+#mvinfoActor, #mvinfoDirector, #mvinfoGenre, #mvinfoOpenDt, #mvinfoCompanyNm{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  margin-bottom: 5px;
+}
+
+#mvinfoActor{
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.tt{
+  font-weight: bolder;
+  margin-right: 10px;
+}
+
+#line{
+  height: 10px;
+  display: flex;
+
+  justify-content: start;
+  align-items: center;
+
+  margin-bottom: 5px;
 }
