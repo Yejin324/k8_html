@@ -206,9 +206,10 @@ fieldset label{
   color:crimson;
 }
 
-#movieNm, #openDt{
+#movieNm, #openDt, #movieRank{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 a{
@@ -220,11 +221,11 @@ a{
   font-size: 90%;
 }
 
-#movieNm{
+/* #movieNm{
   display: flex;
   justify-content: start;
   align-items: start;
-}
+} */
 
 #mvinfoName{
   display: flex;
